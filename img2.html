@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lightrealm - Image 2</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Pixellari', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 4rem 2rem;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    .image-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .viewer-img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 12px;
+      image-rendering: pixelated;
+    }
+
+    .return-wrapper {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      margin-left: 2rem;
+    }
+
+    .button-vertical {
+      transform: scale(1.5);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .button-vertical:hover {
+      transform: scale(1.6);
+    }
+
+    .caption {
+      font-size: 1.25rem;
+      max-width: 1400px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+<div class="top-button-bar">
+  <a href="/info">
+    <img src="assets/buttons/about.png" alt="About" class="nav-button" />
+  </a>
+  <a href="/log">
+    <img src="assets/buttons/log.png" alt="Log" class="nav-button" />
+  </a>
+  <a href="/download">
+    <img src="assets/buttons/download.png" alt="Download the Game" class="nav-button" />
+  </a>
+  <a href="https://www.youtube.com/@revenant-entertainment" target="_blank">
+    <img src="assets/buttons/youtube.png" alt="YouTube" class="nav-button" />
+  </a>
+  <a href="https://discord.gg/XQR8WDBaPa" target="_blank">
+    <img src="assets/buttons/discord.png" alt="Discord" class="nav-button" />
+  </a>
+</div>
+  <div class="image-row">
+    <img src="assets/imgsfordetails/img2.png" alt="Image 2" class="viewer-img" />
+    <div class="return-wrapper">
+  <a href="../info#section2">
+    <img src="assets/return.png" alt="Return to Info" class="button-vertical" />
+  </a>
+</div>
+
+  </div>
+
+  <div class="caption">
+    <p>The physical and historical world are fully simulated. The game tracks the health, personalities, preferences, skills, and powers of all characters, which lead them to continue to interact with the world, and you, as you play.</p>
+    <p>Do they treat you kindly, with fear, or disgust? Do they respond to your demands? Do they immediately attack you because the group your character was in 20 years ago kidnapped their sibling?</p>
+    <p>Objects are also physically simulated, their properties, velocities, enchantments, and more all affecting the world.</p>
+    <p>Don’t use force throw to launch a lightning grenade at yourself.</p>
+  </div>
+
+</body>
+</html>

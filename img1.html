@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lightrealm - Image 1</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Pixellari', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 4rem 2rem;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    .image-row {
+      display: flex;
+      justify-content: center;
+      align-items: center; /* Vertically center image and button */
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .viewer-img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 12px;
+      image-rendering: pixelated;
+    }
+
+        .return-wrapper {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      margin-left: 2rem; /* Move button farther to the right */
+    }
+
+
+    .button-vertical {
+      transform: scale(1.5); /* 1.5x size */
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .button-vertical:hover {
+      transform: scale(1.6); /* Slight bump on hover */
+    }
+
+    .caption {
+      font-size: 1.25rem;
+      max-width: 1400px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+<div class="top-button-bar">
+  <a href="/info">
+    <img src="assets/buttons/about.png" alt="About" class="nav-button" />
+  </a>
+  <a href="/log">
+    <img src="assets/buttons/log.png" alt="Log" class="nav-button" />
+  </a>
+  <a href="/download">
+    <img src="assets/buttons/download.png" alt="Download the Game" class="nav-button" />
+  </a>
+  <a href="https://www.youtube.com/@revenant-entertainment" target="_blank">
+    <img src="assets/buttons/youtube.png" alt="YouTube" class="nav-button" />
+  </a>
+  <a href="https://discord.gg/XQR8WDBaPa" target="_blank">
+    <img src="assets/buttons/discord.png" alt="Discord" class="nav-button" />
+  </a>
+</div>
+
+  <div class="image-row">
+    <img src="assets/imgsfordetails/img1.png" alt="Image 1" class="viewer-img" />
+    
+    <div class="return-wrapper">
+  <a href="../info#section1">
+    <img src="assets/return.png" alt="Return to Info" class="button-vertical" />
+  </a>
+</div>
+
+  </div>
+
+  <div class="caption">
+    <p>The game generates a detailed RPG world with many societies and countless individuals and groups, whose stories naturally form as the world generates.</p>
+    <p>Watch as entities engage in conflict, scheme against each other, and create or destroy the world around them.</p>
+    <p>With your luck, one of the thousands of people will raze your hometown while you're across the continent.</p>
+  </div>
+
+</body>
+</html>

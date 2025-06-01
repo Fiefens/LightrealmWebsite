@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lightrealm</title>
+   
+  <!-- Link to your stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<!-- put this right before </body> so the DOM is ready -->
+
+
+<body>
+  <!-- ─────────────────────  fixed title over everything  ───────────────────── -->
+  
+
+  <!-- ─────────────────────────────  scrollable body  ────────────────────────── -->
+  <main class="content">
+
+
+     <div class="title-scroll">
+  <a href="/" style="pointer-events: auto; display: block;">
+    <img src="assets/title.png" alt="Title" style="display: block; margin: 0 auto;" />
+  </a>
+</div>
+
+
+
+
+
+<div class="top-button-bar">
+  <a href="/info">
+    <img src="assets/buttons/about.png" alt="About" class="nav-button" />
+  </a>
+  <a href="/log">
+    <img src="assets/buttons/log.png" alt="Log" class="nav-button" />
+  </a>
+  <a href="/download">
+    <img src="assets/buttons/download.png" alt="Download the Game" class="nav-button" />
+  </a>
+  <a href="https://www.youtube.com/@revenant-entertainment" target="_blank">
+    <img src="assets/buttons/youtube.png" alt="YouTube" class="nav-button" />
+  </a>
+  <a href="https://discord.gg/XQR8WDBaPa" target="_blank">
+    <img src="assets/buttons/discord.png" alt="Discord" class="nav-button" />
+  </a>
+</div>
+
+  <!-- sidebar pair with centred caption overlay -->
+  <section class="row row--sidebars">
+    <img src="assets/sidebar.png" class="sidebar normal"  alt="Sidebar">
+    <img src="assets/sidebar.png" class="sidebar flipped" alt="Sidebar flipped">
+
+
+      <!-- centred overlay text -->
+      <div class="row-caption">
+  <h1>Welcome&nbsp;to&nbsp;Lightrealm</h1>
+  <p></p>
+  <p>Lightrealm is a free-to-play singleplayer open world RPG.</p>
+  <p>Lightrealm produces worlds populated with centuries of simulated civilizations, factions, groups, and other entities fighting for power.</p>
+  <p>Utilize limitless action types to conversate, fight, gather, loot,</p>
+  <p>learn, capture, and conquest your way to victory, whatever that may be in your eyes.</p>
+
+  <!-- vertical stacked buttons under the welcome text -->
+  <div class="button-stack">
+    <a href="/info">
+      <img src="assets/tellmemore.png" alt="Tell Me More" class="button-vertical" />
+    </a>
+    <a href="/download">
+      <img src="assets/downloadbutton.png" alt="Download" class="button-vertical" />
+    </a>
+  </div>
+
+  
+<!-- debtshiba image below vertical buttons -->
+<div class="debtshiba-container">
+  <img src="assets/debtshiba.png" alt="Debtshiba" class="debtshiba" />
+</div>
+
+
+</div> <!-- closes .row-caption only -->
+
+
+    </section>
+
+    <!-- you can duplicate the section above for additional full-screen rows -->
+
+  </main>
+<script>
+  const title      = document.querySelector('.title-scroll');   // the wrapper
+  const rootStyle  = document.documentElement.style;
+
+  function syncGap(){
+    const gap = title.getBoundingClientRect().height;
+    rootStyle.setProperty('--title-gap', `${gap}px`);
+  }
+
+  /* run once and every time the viewport changes */
+  window.addEventListener('load',   syncGap);
+  window.addEventListener('resize', syncGap);
+</script>
+
+</body>
+</html>

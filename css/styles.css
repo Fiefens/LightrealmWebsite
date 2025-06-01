@@ -1,0 +1,275 @@
+/* ---------- page & font ---------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: 'Pixellari', sans-serif;
+}
+
+@font-face {
+  font-family: 'Pixellari';
+  src: url('../assets/fonts/Pixellari.ttf') format('truetype');
+}
+
+/* ---------- generic full-screen row ---------- */
+.row {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  box-sizing: border-box;
+}
+.sidebars-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.info-body-wrapper {
+  position: relative;
+  z-index: 1;
+}
+.top-button-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  flex-wrap: wrap;
+  z-index: 100;
+}
+.log-container {
+  background: transparent !important; /* remove gray background */
+  color: #fff;
+  max-width: 1000px;
+  margin: 0 auto;                     /* centers the block */
+  padding: 2rem;
+  text-align: center;                /* center the text itself */
+  white-space: pre-wrap;
+  font-size: 1.25rem;
+  line-height: 1.8;
+}
+
+.nav-button {
+  height: auto;
+  width: 250px;
+  max-width: 90vw;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.nav-button:hover {
+  transform: scale(1.05);
+}
+
+
+/* ---------- sidebar row (images hug the edges) ---------- */
+/* row that carries sidebars now acts as a positioning context */
+.row--sidebars {
+  position: relative;
+  justify-content: space-between;
+  overflow: hidden;     /* hides the part that sticks out */
+}
+
+/* --------------- variables --------------- */
+:root{
+  --title-gap: 0px;   /* JS keeps this current */
+}
+
+
+.row-caption {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+  text-align: center;
+  color: #fff;
+  pointer-events: none;
+}
+
+/* Remove this from .button-stack */
+.button-stack {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  pointer-events: auto;
+  /* remove: transform: translateY(-40px); */
+}
+
+
+
+/* optional width limit */
+.row-caption h1 { margin: 0 0 .5em; }
+.row-caption p  { margin: .25em 0;  }
+
+
+/* ---------- centred-text row ---------- */
+.row--centered {
+  justify-content: center;
+  align-items:  center;
+  text-align:   center;
+  color: #fff;
+  padding: 0;            /* no gutter */
+}
+
+.row--centered .text-wrapper {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.debtshiba-container {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.debtshiba {
+  width: 80px;
+  height: auto;
+  display: inline-block;
+}
+
+
+
+.sidebar.flipped   { transform: scaleX(-1); }
+
+/* ---------- fixed title overlay ---------- */
+/* scrolling header */
+/* scrolling title that still scrolls but no longer occupies height */
+.title-scroll{
+  position: absolute;          /* removed from normal flow  */
+  top: 0; left: 50%;
+  transform: translateX(-50%); /* keep it centred           */
+  z-index: 20;                 /* above the images          */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;                   /* no gap                    */
+  pointer-events: none;        /* optional – clicks pass through */
+}
+
+
+.title-scroll img{
+  max-width: 60%;
+}
+
+/* ---------- overlayed buttons on top ---------- */
+/* ---------- vertical stacked buttons below welcome text ---------- */
+
+.background-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 35vw;
+  object-fit: cover;
+  background: red; /* for debugging - remove in prod */
+  left: 0; /* this makes the normal sidebar hug the left */
+}
+
+.sidebar.flipped {
+  left: auto;     /* override the base .sidebar left */
+  right: 0;       /* pin to right */
+  transform: scaleX(-1);
+}
+.content {
+  position: relative;
+  z-index: 2;
+  padding-top: var(--title-gap, 200px);
+  background: transparent; /* or remove this line entirely */
+}
+
+.button-vertical {
+  width: 400px !important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.button-vertical:hover {
+  transform: scale(1.05);
+}
+
+
+/* ---------- info page alternating rows ---------- */
+.row--info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  padding: 6rem 5vw;           /* more space around the section */
+  box-sizing: border-box;
+  background: transparent;
+  color: #fff;
+  gap: 6rem;                   /* more gap between text and image */
+}
+
+/* alternate direction for every other row */
+.row--info.reverse {
+  flex-direction: row-reverse;
+}
+
+/* ---------- text & image blocks ---------- */
+.info-text {
+  flex: 1;
+  position: relative;
+  padding: 3rem;               /* more internal space inside the box */
+  background: #000;
+  color: #fff;
+  font-family: 'Pixellari', sans-serif;
+  font-size: 1.25rem;          /* larger font */
+  line-height: 2;
+  max-width: 800px;
+
+  border: 32px solid transparent;                        /* one-third of 96px */
+  border-image: url('../assets/bordure.png') 32 fill stretch;
+  image-rendering: pixelated;
+  box-sizing: border-box;
+}
+
+.info-text p {
+  margin-bottom: 2rem;         /* more space between paragraphs */
+}
+
+.info-image {
+  flex: 1;
+  max-width: 800px;
+}
+
+.info-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  image-rendering: pixelated;
+}
+
+
+
+
+
+/* ---------- layout offset beneath title ---------- */
